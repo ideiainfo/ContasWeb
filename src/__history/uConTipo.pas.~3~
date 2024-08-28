@@ -1,0 +1,58 @@
+unit uConTipo;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TFormConTipo = class(TForm)
+    Panel1: TPanel;
+    lblLocalizar: TLabel;
+    EditLocalizar: TEdit;
+    BtnLocalizar: TButton;
+    DBGrid1: TDBGrid;
+    dsTipo: TDataSource;
+    BtnNovo: TButton;
+    BtnEditar: TButton;
+    dsGrupo: TDataSource;
+    procedure BtnNovoClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure BtnLocalizarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormConTipo: TFormConTipo;
+
+implementation
+
+{$R *.dfm}
+
+uses uDM, uCadTipo;
+
+procedure TFormConTipo.BtnLocalizarClick(Sender: TObject);
+begin
+   DM.qrTipo.close;
+   DM.qrTipo.open;
+end;
+
+procedure TFormConTipo.BtnNovoClick(Sender: TObject);
+begin
+  FormCadTipo: TFormCadTipo.create(application);
+  dm.qrTipo.insert;
+  FormCadTipo.showmodal;
+  FormCadTipo.free;
+end;
+
+procedure TFormConTipo.FormShow(Sender: TObject);
+begin
+ BtnLocalizarClick(Sender);
+end;
+
+end.

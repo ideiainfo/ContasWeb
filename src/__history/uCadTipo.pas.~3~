@@ -1,0 +1,46 @@
+unit uCadTipo;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Data.DB,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.DBCtrls, Vcl.StdCtrls,
+  Vcl.Mask, Vcl.ExtCtrls;
+
+type
+  TformCadTipo = class(TForm)
+    lblCodigo: TLabel;
+    DBECodigo: TDBEdit;
+    lblDescicao: TLabel;
+    DBEDescrição: TDBEdit;
+    Label3: TLabel;
+    Label4: TLabel;
+    DBComboBox1: TDBComboBox;
+    DBLookupComboBox1: TDBLookupComboBox;
+    btnGravar: TButton;
+    btnCancelar: TButton;
+    procedure btnCancelarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  formCadTipo: TformCadTipo;
+
+implementation
+
+{$R *.dfm}
+
+uses uConTipo;
+
+procedure TformCadTipo.btnCancelarClick(Sender: TObject);
+begin
+  close;
+end;
+
+end.
