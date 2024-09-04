@@ -169,7 +169,7 @@ function TFormCrudGrupo.CrudOnEdit: boolean;
 begin
  result:= inherited;
 
-// Crud_Query.Edit;
+ Crud_Query.Edit;
 end;
 
 function TFormCrudGrupo.CrudOnInsert: boolean;
@@ -189,16 +189,16 @@ function TFormCrudGrupo.CrudOnSave: boolean;
 begin
  result:= inherited;
 
-// Crud_Query.Edit;
-// Crud_Query.Post;
+ Crud_Query.Edit;
+ Crud_Query.Post;
 end;
 
 function TFormCrudGrupo.CrudOnDelete: boolean;
 begin
  result:= inherited;
 
-// Crud_Query.Edit;
-// Crud_Query.Delete;
+ Crud_Query.Edit;
+ Crud_Query.Delete;
 end;
 
 function TFormCrudGrupo.CrudOnBack: boolean;

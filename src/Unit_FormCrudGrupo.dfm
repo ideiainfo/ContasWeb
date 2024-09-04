@@ -1,9 +1,5 @@
 inherited FormCrudGrupo: TFormCrudGrupo
   Caption = 'FormCrudGrupo'
-  ExplicitLeft = 3
-  ExplicitTop = 3
-  ExplicitWidth = 841
-  ExplicitHeight = 615
   TextHeight = 13
   inherited Crud_PageControl: TPageControl
     inherited Crud_TabSheetSearch: TTabSheet
