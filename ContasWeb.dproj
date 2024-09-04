@@ -74,7 +74,7 @@
         <VerInfo_Locale>1046</VerInfo_Locale>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;CFBundleName=</VerInfo_Keys>
         <DCC_DcuOutput>.\dcu\$(Platform)\$(Config)</DCC_DcuOutput>
-        <DCC_UnitSearchPath>C:\d2bridgefram\D2Bridge Framework\;C:\d2bridgefram\D2Bridge Framework\Prism;C:\d2bridgefram\D2Bridge Framework\Others VCL;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_UnitSearchPath>C:\d2bridgeframework\D2Bridge Framework\;C:\\d2bridgeframework\D2Bridge Framework\Prism;C:\\d2bridgeframework\D2Bridge Framework\Others VCL;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
@@ -130,7 +130,6 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
-        <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
@@ -168,12 +167,12 @@
             <Form>RelTipo</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="src\Unit_FormCrudBase.pas">
-            <Form>FormCrudBase</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
         <DCCReference Include="src\Unit_FormCrudGrupo.pas">
             <Form>FormCrudGrupo</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="src\Unit_FormCrudBase.pas">
+            <Form>FormCrudBase</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">

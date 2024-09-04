@@ -1,0 +1,13 @@
+D2Bridge Framework
+by Talis Jonatas Gomes
+https://www.d2bridge.com.br
+
+LOG Started in 04/09/2024 00:07:24
+
+04/09/2024 00:07:39 | Identy = main | Component = Crud_ButtonNew | Event = OnClick | Error = Access violation at address 006D0F61 in module 'ContasWeb.exe'. Read of address 00000004
+04/09/2024 00:07:40 | Identy = main | Component = Crud_ButtonNew | Event = OnClick | Error = Access violation at address 006D0F61 in module 'ContasWeb.exe'. Read of address 00000004
+04/09/2024 00:07:42 | Identy = main | Component = Crud_ButtonNew | Event = OnClick | Error = Access violation at address 006D0F61 in module 'ContasWeb.exe'. Read of address 00000004
+04/09/2024 00:07:42 | Identy = main | Component = Crud_ButtonNew | Event = OnClick | Error = Access violation at address 006D0F61 in module 'ContasWeb.exe'. Read of address 00000004
+04/09/2024 00:07:43 | Identy = main | Component = Crud_ButtonNew | Event = OnClick | Error = Access violation at address 006D0F61 in module 'ContasWeb.exe'. Read of address 00000004
+04/09/2024 00:07:43 | Identy = main | Component = Crud_ButtonNew | Event = OnClick | Error = Access violation at address 006D0F61 in module 'ContasWeb.exe'. Read of address 00000004
+04/09/2024 00:07:44 | Identy = main | Component = Crud_ButtonNew | Event = OnClick | Error = Access violation at address 006D0F61 in module 'ContasWeb.exe'. Read of address 00000004

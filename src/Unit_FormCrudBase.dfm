@@ -1,7 +1,7 @@
 object FormCrudBase: TFormCrudBase
   Left = 0
   Top = 0
-  Caption = 'FormCrudTemplate'
+  Caption = 'FormCrudBase'
   ClientHeight = 577
   ClientWidth = 829
   Color = clBtnFace
@@ -62,9 +62,9 @@ object FormCrudBase: TFormCrudBase
         OnClick = Crud_ButtonNewClick
       end
       object Crud_DBGrid_Search: TDBGrid
-        Left = 0
-        Top = 38
-        Width = 797
+        Left = 3
+        Top = 37
+        Width = 815
         Height = 449
         Anchors = [akLeft, akTop, akRight, akBottom]
         DataSource = Crud_DSQuery
@@ -84,7 +84,7 @@ object FormCrudBase: TFormCrudBase
         821
         489)
       object Crud_ButtonSave: TButton
-        Left = 540
+        Left = 558
         Top = 5
         Width = 85
         Height = 25
@@ -94,7 +94,7 @@ object FormCrudBase: TFormCrudBase
         OnClick = Crud_ButtonSaveClick
       end
       object Crud_ButtonDelete: TButton
-        Left = 627
+        Left = 645
         Top = 5
         Width = 85
         Height = 25
@@ -104,7 +104,7 @@ object FormCrudBase: TFormCrudBase
         OnClick = Crud_ButtonDeleteClick
       end
       object Crud_ButtonBack: TButton
-        Left = 715
+        Left = 733
         Top = 5
         Width = 85
         Height = 25

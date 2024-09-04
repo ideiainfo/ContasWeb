@@ -21,8 +21,8 @@ uses
   uDM in 'src\uDM.pas' {DM: TDataModule},
   uPrincipal in 'src\uPrincipal.pas' {FormPrincipal},
   uRelTipo in 'src\uRelTipo.pas' {RelTipo},
-  Unit_FormCrudBase in 'src\Unit_FormCrudBase.pas' {FormCrudBase},
-  Unit_FormCrudGrupo in 'src\Unit_FormCrudGrupo.pas' {FormCrudGrupo};
+  Unit_FormCrudGrupo in 'src\Unit_FormCrudGrupo.pas' {FormCrudGrupo},
+  Unit_FormCrudBase in 'src\Unit_FormCrudBase.pas' {FormCrudBase};
 
 {$R *.res}
 

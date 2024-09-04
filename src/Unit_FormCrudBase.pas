@@ -10,7 +10,7 @@ uses
   FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
   FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.Grids, Vcl.DBGrids,
   Vcl.StdCtrls, Vcl.Controls, Vcl.ExtCtrls, Vcl.ComCtrls, Vcl.Dialogs,
-  D2Bridge.Item.HTML.Card, D2Bridge.Item.HTML.Row,D2Bridge.Forms, uPrincipal;
+  D2Bridge.Item.HTML.Card, D2Bridge.Item.HTML.Row,D2Bridge.Forms,uprincipal;
 
 
 type
@@ -36,7 +36,7 @@ type
 
 
 type
-  TFormCrudBase = class(TFormPrincipal)
+  TFormCrudBase = class(TFormprincipal)
     Crud_PageControl: TPageControl;
     Crud_TabSheetSearch: TTabSheet;
     Crud_PanelSearchFor: TPanel;
@@ -89,8 +89,11 @@ type
     //Start
     procedure StartCardSearch;
     procedure StartCardData;
-    procedure CrudDefaultSearch(ATable: string; AFieldWhere: string; ASearch: string; AFieldOrder: string = ''); overload;
-    procedure CrudDefaultSearch(ATable: string; AWhereFields: array of string; ASearch: string; AAnd: TArray<string> = []; AOr: TArray<string> = []; AOrderFields: TArray<string> = []); overload;
+    procedure CrudDefaultSearch(ATable: string; AFieldWhere: string; ASearch: string; AFieldOrder: string); overload;
+    procedure CrudDefaultSearch(ATable: string; AWhereFields: array of string; ASearch: string); overload;
+    procedure CrudDefaultSearch(ATable: string; AWhereFields: array of string; ASearch: string; AAnd: TArray<string>); overload;
+    procedure CrudDefaultSearch(ATable: string; AWhereFields: array of string; ASearch: string; AAnd: TArray<string>; AOr: TArray<string>); overload;
+    procedure CrudDefaultSearch(ATable: string; AWhereFields: array of string; ASearch: string; AAnd: TArray<string>; AOr: TArray<string>; AOrderFields: TArray<string>); overload;
   protected
     //Crud Operations
     procedure CrudOperation(ACrudOperation: CrudOperation);
@@ -130,8 +133,6 @@ implementation
 {$R *.dfm}
 
 uses uDM;
-
-
 
 function FormCrudBase:TFormCrudBase;
 begin
@@ -179,15 +180,27 @@ if FStartCard = FCrud_CardSearch then
 
 end;
 
-procedure TFormCrudBase.CrudDefaultSearch(ATable, AFieldWhere, ASearch,
-  AFieldOrder: string);
+procedure TFormCrudBase.CrudDefaultSearch(ATable, AFieldWhere, ASearch, AFieldOrder: string);
 begin
  CrudDefaultSearch(ATable, [AFieldWhere], ASearch, [], [], [AFieldOrder]);
 end;
 
-procedure TFormCrudBase.CrudDefaultSearch(ATable: string;
-  AWhereFields: array of string; ASearch: string; AAnd, AOr,
-  AOrderFields: TArray<string>);
+procedure TFormCrudBase.CrudDefaultSearch(ATable: string; AWhereFields: array of string; ASearch: string);
+begin
+ CrudDefaultSearch(ATable, AWhereFields, ASearch, [], [], []);
+end;
+
+procedure TFormCrudBase.CrudDefaultSearch(ATable: string; AWhereFields: array of string; ASearch: string; AAnd: TArray<string>);
+begin
+ CrudDefaultSearch(ATable, AWhereFields, ASearch, AAnd, [], []);
+end;
+
+procedure TFormCrudBase.CrudDefaultSearch(ATable: string; AWhereFields: array of string; ASearch: string; AAnd, AOr: TArray<string>);
+begin
+ CrudDefaultSearch(ATable, AWhereFields, ASearch, AAnd, AOr, []);
+end;
+
+procedure TFormCrudBase.CrudDefaultSearch(ATable: string; AWhereFields: array of string; ASearch: string; AAnd, AOr, AOrderFields: TArray<string>);
 var
  I: integer;
  vWhere, vAnd, vOR, vOrderBy: string;
@@ -411,14 +424,14 @@ begin
    begin
     FActiveOperation:= ACrudOperation;
 
-    Showmessage('Registro salvo', true, true);
+    Showmessage('Registro Salvo', true, true);
 
     CrudOperation(OpBack);
    end;
   end else
   if ACrudOperation in [OpDelete] then
   begin
-   if MessageDlg('Confirma a exclusão do registro?', mtconfirmation, [mbyes,mbno], 0) = mryes then
+   if MessageDlg('Confirma exclusão do registro?', mtconfirmation, [mbyes,mbno], 0) = mryes then
    if CrudOnDelete then
    begin
     FActiveOperation:= ACrudOperation;
@@ -571,7 +584,7 @@ begin
    with Columns.Add do
    begin
     ColumnIndex:= 0;
-    Width:= 50;
+    Width:= 30;
     Title:= 'Options';
 
     //Button Edit
