@@ -81,14 +81,14 @@ begin
           AddVCLObj(DBECodigo);
 
     with row.Items.Add do
-        with FormGroup(lblDescicao.Caption,CSSClass.Col.colsize6) do
+        with FormGroup(lblDescicao.Caption,CSSClass.Col.colsize12) do
           AddVCLObj(DBEDescricao);
 
     with row.Items.Add do
       begin
-        with FormGroup(lblgrupo.Caption,CSSClass.Col.colsize3) do
+        with FormGroup(lblgrupo.Caption,CSSClass.Col.colsize6) do
           AddVCLObj(DBLGrupo);
-        with FormGroup(lbltipo.Caption, CSSClass.Col.colsize3) do
+        with FormGroup(lbltipo.Caption, CSSClass.Col.colsize6) do
           AddVCLObj(DBCTipo);
       end;
     with row.Items.Add do

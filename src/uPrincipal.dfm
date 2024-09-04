@@ -23,6 +23,7 @@ object FormPrincipal: TFormPrincipal
       end
       object GrupodeReceitasDespesas1: TMenuItem
         Caption = 'Grupo de Receitas-Despesas'
+        OnClick = GrupodeReceitasDespesas1Click
       end
       object Clientes1: TMenuItem
         Caption = 'Clientes'
@@ -52,6 +53,13 @@ object FormPrincipal: TFormPrincipal
     end
     object MovimentodeCaixa2: TMenuItem
       Caption = 'Relat'#243'rios'
+      object RelaodeTiposdeReceitaseDespesas1: TMenuItem
+        Caption = 'Rela'#231#227'o de Tipos de Receitas e Despesas'
+        OnClick = RelaodeTiposdeReceitaseDespesas1Click
+      end
+      object N3: TMenuItem
+        Caption = '-'
+      end
       object Contasapagarporvencimento1: TMenuItem
         Caption = 'Contas a pagar por vencimento'
       end

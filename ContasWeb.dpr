@@ -19,7 +19,10 @@ uses
   uCadTipo in 'src\uCadTipo.pas' {formCadTipo},
   uConTipo in 'src\uConTipo.pas' {FormConTipo},
   uDM in 'src\uDM.pas' {DM: TDataModule},
-  uPrincipal in 'src\uPrincipal.pas' {FormPrincipal};
+  uPrincipal in 'src\uPrincipal.pas' {FormPrincipal},
+  uRelTipo in 'src\uRelTipo.pas' {RelTipo},
+  Unit_FormCrudBase in 'src\Unit_FormCrudBase.pas' {FormCrudBase},
+  Unit_FormCrudGrupo in 'src\Unit_FormCrudGrupo.pas' {FormCrudGrupo};
 
 {$R *.res}
 

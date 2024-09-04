@@ -1,0 +1,9 @@
+D2Bridge Framework
+by Talis Jonatas Gomes
+https://www.d2bridge.com.br
+
+LOG Started in 02/09/2024 22:04:46
+
+02/09/2024 22:04:56 | Identy = main | Component = Crud_ButtonSearch | Event = OnClick | Error = [FireDAC][Phys][MySQL] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '='%%'' at line 1
+02/09/2024 22:04:59 | Identy = main | Component = Crud_ButtonSearch | Event = OnClick | Error = [FireDAC][Phys][MySQL] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '='%%'' at line 1
+02/09/2024 22:05:02 | Identy = main | Component = Crud_ButtonSearch | Event = OnClick | Error = [FireDAC][Phys][MySQL] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '='%teste%'' at line 1

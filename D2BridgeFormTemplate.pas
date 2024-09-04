@@ -3,7 +3,7 @@ unit D2BridgeFormTemplate;
 interface
 
 Uses
- System.Classes,
+ System.Classes, System.SysUtils,
  D2Bridge.Prism.Form;
 
 
@@ -12,6 +12,8 @@ type
   private
    procedure ProcessHTML(Sender: TObject; var AHTMLText: string);
    procedure ProcessTagHTML(const TagString: string; var ReplaceTag: string);
+
+   procedure CallBack(const CallBackName:string; EventParams: TStrings); override;
 
    function AbrirMenuTipo(EventParams: TStrings): String;
 
@@ -24,7 +26,8 @@ type
 implementation
 
 Uses
- ContasWebWebApp, uConTipo;
+ ContasWebWebApp, uConTipo, uPrincipal, uRelTipo,
+  Unit_FormCrudGrupo;
 
 
 { TD2BridgeFormTemplate }
@@ -35,6 +38,31 @@ begin
       TFormConTipo.CreateInstance;
      FormConTipo.showmodal;
      FormConTipo.free;
+end;
+
+procedure TD2BridgeFormTemplate.CallBack(const CallBackName: string;   EventParams: TStrings);
+begin
+  inherited;
+ if SameText(CallBackName, 'RelatorioTipo') then
+ begin
+    RelTipo:= Treltipo.Create(nil);
+    Reltipo.qrTipo.Open;
+
+    RelTipo.RLReport1.SaveToFile('c:\projetosweb\pdf\relatorio.pdf');
+    RelTipo.RLReport1.Prepare;
+    RelTipo.RLPDFFilter1.FilterPages(reltipo.RLReport1.Pages);
+
+    D2Bridge.PrismSession.SendFile('c:\projetosweb\pdf\relatorio.pdf',true) ;
+    Reltipo.Free;
+ end;
+
+  if SameText(CallBackName, 'AbrirMenuGrupo') then
+  begin
+     if FormCrudGrupo = nil then
+        TFormCrudGrupo.CreateInstance;
+     FormCrudGrupo.Show;
+  end;
+
 end;
 
 constructor TD2BridgeFormTemplate.Create(AOwner: TComponent;

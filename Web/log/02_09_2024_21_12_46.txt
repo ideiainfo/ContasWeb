@@ -1,0 +1,7 @@
+D2Bridge Framework
+by Talis Jonatas Gomes
+https://www.d2bridge.com.br
+
+LOG Started in 02/09/2024 21:12:46
+
+02/09/2024 21:12:57 | Identy = main | Component = FormConTipo | Event = ExportD2Bridge | Error = Access violation at address 00BC342E in module 'ContasWeb.exe'. Read of address 00000000

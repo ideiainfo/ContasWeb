@@ -3,7 +3,7 @@ object FormConTipo: TFormConTipo
   Top = 0
   Caption = 'Tipo de Receitas e Despesas'
   ClientHeight = 442
-  ClientWidth = 628
+  ClientWidth = 726
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,11 +16,11 @@ object FormConTipo: TFormConTipo
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 628
+    Width = 726
     Height = 65
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 622
+    ExplicitWidth = 720
     object lblLocalizar: TLabel
       Left = 24
       Top = 24
@@ -62,11 +62,20 @@ object FormConTipo: TFormConTipo
       TabOrder = 3
       OnClick = BtnEditarClick
     end
+    object BtnExcluir: TButton
+      Left = 640
+      Top = 20
+      Width = 75
+      Height = 25
+      Caption = 'Excluir'
+      TabOrder = 4
+      OnClick = BtnExcluirClick
+    end
   end
   object DBGrid1: TDBGrid
     Left = 0
     Top = 65
-    Width = 628
+    Width = 726
     Height = 377
     Align = alClient
     DataSource = dsTipo

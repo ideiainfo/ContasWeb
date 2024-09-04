@@ -18,11 +18,13 @@ type
     BtnNovo: TButton;
     BtnEditar: TButton;
     dsGrupo: TDataSource;
+    BtnExcluir: TButton;
     procedure BtnNovoClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure BtnLocalizarClick(Sender: TObject);
     procedure BtnEditarClick(Sender: TObject);
     procedure DBGrid1DblClick(Sender: TObject);
+    procedure BtnExcluirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -51,11 +53,14 @@ end;
 
 procedure TFormConTipo.BtnEditarClick(Sender: TObject);
 begin
-  if FormCadTipo = nil then
-     TFormCadTipo.CreateInstance;
+//  if FormCadTipo = nil then
+//     TFormCadTipo.CreateInstance;
   dm.qrTipo.edit;
-  FormCadTipo.showmodal;
-  FormCadTipo.free;
+  if IsD2BridgeContext then
+     ShowPopup('Popup'+formCadTipo.name)
+   else
+     FormCadTipo.showmodal;
+//  FormCadTipo.free;
 end;
 
 procedure TFormConTipo.BtnLocalizarClick(Sender: TObject);
@@ -71,11 +76,23 @@ end;
 
 procedure TFormConTipo.BtnNovoClick(Sender: TObject);
 begin
-  if FormCadTipo = nil then
-     TFormCadTipo.CreateInstance;
+//  if FormCadTipo = nil then
+//     TFormCadTipo.CreateInstance;
   dm.qrTipo.insert;
-  FormCadTipo.showmodal;
-  FormCadTipo.free;
+
+  if IsD2BridgeContext then
+     ShowPopup('Popup'+formCadTipo.name)
+   else
+     FormCadTipo.showmodal;
+
+//  FormCadTipo.free;
+end;
+
+procedure TFormConTipo.BtnExcluirClick(Sender: TObject);
+begin
+  inherited;
+  if messagedlg('Deseja Realmente excluir este registro?', mtConfirmation, [mbYes,mbNo], 0) = mrYes then
+    dm.qrTipo.Delete;
 end;
 
 procedure TFormConTipo.DBGrid1DblClick(Sender: TObject);
@@ -100,6 +117,12 @@ begin
 // D2Bridge.FrameworkExportType.TemplatePageHTMLFile := '';
 
  //Export yours Controls
+
+ if formCadTipo = nil then
+   TformCadTipo.CreateInstance;
+
+ D2Bridge.AddNested(formCadTipo);
+
  with D2Bridge.Items.add do
  begin
     with row.Items.Add do
@@ -110,8 +133,8 @@ begin
         with FormGroup do
           AddVCLObj(BtnLocalizar,CSSClass.Button.search);
 
-        with FormGroup do
-          AddVCLObj(BtnEditar, 'btn btn-outline-warning');
+//        with FormGroup do
+//          AddVCLObj(BtnEditar, 'btn btn-outline-warning');
 
         with FormGroup do
           AddVCLObj(BtnNovo, CSSClass.Button.add);
@@ -120,6 +143,9 @@ begin
    with row.Items.Add do
       VCLObj(DBGrid1);
 
+   Popup('Popup'+formCadTipo.Name, 'Tipo de Receita e Despesa',True, CSSClass.Popup.Large).Items.Add.Nested(formCadTipo.Name);
+
+
  end;
 end;
 
@@ -127,6 +153,40 @@ procedure TFormConTipo.InitControlsD2Bridge(const PrismControl: TPrismControl);
 begin
  inherited;
 
+ if PrismControl.IsDBGrid then
+ begin
+    PrismControl.AsDBGrid.RecordsPerPage := 10;
+    PrismControl.AsDBGrid.MaxRecords := 2000;
+
+    with PrismControl.AsDBGrid do
+    begin
+      with Columns.Add do
+      begin
+         Title:= 'Ações';
+         ColumnIndex :=0;
+         Width := 100;
+         With Buttons.Add do
+           begin
+            ButtonModel := TButtonModel.edit;
+            Caption:='';
+            Onclick:=BtnEditarClick;
+           end;
+
+         With Buttons.Add do
+           begin
+            ButtonModel := TButtonModel.Delete;
+            Caption:='';
+            Onclick:=BtnExcluirClick;
+           end;
+      end;
+
+    end;
+
+
+
+
+
+ end;
  //Menu example
  {
   if PrismControl.VCLComponent = MainMenu1 then
