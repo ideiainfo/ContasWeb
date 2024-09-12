@@ -1,6 +1,6 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{F9D19490-C8BF-4AC1-AC1A-D1EA65A4792D}</ProjectGuid>
+        <ProjectGuid>{530F5DD0-EF9C-4EBB-91E1-8445D0A84D4F}</ProjectGuid>
         <MainSource>ContasWeb.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">D2Bridge Web Debug</Config>
@@ -173,6 +173,14 @@
         </DCCReference>
         <DCCReference Include="src\Unit_FormCrudBase.pas">
             <Form>FormCrudBase</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="src\ULogin.pas">
+            <Form>Form_Login</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="src\Udashboard.pas">
+            <Form>FormDashboard</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">

@@ -43,8 +43,7 @@ type
     { Public declarations }
   end;
 
-var
-  FormPrincipal: TFormPrincipal;
+function FormPrincipal: TFormPrincipal;
 
 implementation
 
@@ -54,10 +53,10 @@ uses uConTipo, uDM, ContasWebWebApp, D2BridgeFormTemplate, uRelTipo,
   Unit_FormCrudGrupo;
 
 
-//Function FormPrincipal: TFormPrincipal;
-//begin
-// Result:= TFormPrincipal(TFormPrincipal.GetInstance);
-//end;
+Function FormPrincipal: TFormPrincipal;
+begin
+ Result:= TFormPrincipal(TFormPrincipal.GetInstance);
+end;
 
 procedure TFormPrincipal.Cadastro2Click(Sender: TObject);
 begin

@@ -1,0 +1,16 @@
+D2Bridge Framework
+by Talis Jonatas Gomes
+https://www.d2bridge.com.br
+
+LOG Started in 09/09/2024 18:43:25
+
+09/09/2024 18:45:42 | Identy = main | Component = BUTTON_LOGAR | Event = OnClick | Error = Access violation at address 013B4893 in module 'ContasWeb.exe'. Read of address 000003EC
+09/09/2024 18:45:43 | Identy = main | Component = BUTTON_LOGAR | Event = OnClick | Error = Access violation at address 013B4893 in module 'ContasWeb.exe'. Read of address 000003EC
+09/09/2024 18:45:45 | Identy = main | Component = BUTTON_LOGAR | Event = OnClick | Error = Access violation at address 013B4893 in module 'ContasWeb.exe'. Read of address 000003EC
+09/09/2024 18:45:46 | Identy = main | Component = BUTTON_LOGAR | Event = OnClick | Error = Access violation at address 013B4893 in module 'ContasWeb.exe'. Read of address 000003EC
+09/09/2024 18:45:47 | Identy = main | Component = BUTTON_LOGAR | Event = OnClick | Error = Access violation at address 013B4893 in module 'ContasWeb.exe'. Read of address 000003EC
+09/09/2024 18:45:48 | Identy = main | Component = BUTTON_LOGAR | Event = OnClick | Error = Access violation at address 013B4893 in module 'ContasWeb.exe'. Read of address 000003EC
+09/09/2024 18:45:50 | Identy = main | Component = BUTTON_LOGAR | Event = OnClick | Error = Access violation at address 013B4893 in module 'ContasWeb.exe'. Read of address 000003EC
+09/09/2024 18:45:51 | Identy = main | Component = BUTTON_LOGAR | Event = OnClick | Error = Access violation at address 013B4893 in module 'ContasWeb.exe'. Read of address 000003EC
+09/09/2024 18:45:52 | Identy = main | Component = BUTTON_LOGAR | Event = OnClick | Error = Access violation at address 013B4893 in module 'ContasWeb.exe'. Read of address 000003EC
+09/09/2024 18:45:54 | Identy = main | Component = BUTTON_LOGAR | Event = OnClick | Error = Access violation at address 013B4893 in module 'ContasWeb.exe'. Read of address 000003EC

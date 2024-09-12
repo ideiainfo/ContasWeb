@@ -24,8 +24,12 @@ type
     Contasapagarporvencimento1: TMenuItem;
     Contasapagarporvencimento2: TMenuItem;
     FluxodeCaixa1: TMenuItem;
+    RelaodeTiposdeReceitaseDespesas1: TMenuItem;
+    N3: TMenuItem;
     procedure Cadastro2Click(Sender: TObject);
     procedure N2Click(Sender: TObject);
+    procedure RelaodeTiposdeReceitaseDespesas1Click(Sender: TObject);
+    procedure GrupodeReceitasDespesas1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -46,7 +50,8 @@ implementation
 
 {$R *.dfm}
 
-uses uConTipo, uDM, ContasWebWebApp, D2BridgeFormTemplate;
+uses uConTipo, uDM, ContasWebWebApp, D2BridgeFormTemplate, uRelTipo,
+  Unit_FormCrudGrupo;
 
 
 //Function FormPrincipal: TFormPrincipal;
@@ -90,6 +95,13 @@ begin
  end;
 end;
 
+procedure TFormPrincipal.GrupodeReceitasDespesas1Click(Sender: TObject);
+begin
+     if FormCrudGrupo = nil then
+        TFormCrudGrupo.CreateInstance;
+     FormCrudGrupo.Show;
+end;
+
 procedure TFormPrincipal.InitControlsD2Bridge(const PrismControl: TPrismControl);
 begin
  inherited;
@@ -131,6 +143,24 @@ begin
  }
 end;
 
+
+procedure TFormPrincipal.RelaodeTiposdeReceitaseDespesas1Click(Sender: TObject);
+begin
+
+  RelTipo:= Treltipo.Create(Application);
+  Reltipo.qrTipo.Open;
+  if IsD2BridgeContext then
+  begin
+    RelTipo.RLReport1.ShowProgress:=false;
+    RelTipo.RLReport1.SaveToFile('c:\projetoweb\pdf\relatorio.pdf');
+    RelTipo.RLReport1.Prepare;
+    RelTipo.RLPDFFilter1.FilterPages(reltipo.RLReport1.Pages);
+    D2Bridge.PrismSession.SendFile('c:\projetoweb\pdf\relatorio.pdf')
+  end
+  else
+    RelTipo.RLReport1.Preview();
+  RelTipo.Free;
+end;
 
 procedure TFormPrincipal.RenderD2Bridge(const PrismControl: TPrismControl; var HTMLControl: string);
 begin

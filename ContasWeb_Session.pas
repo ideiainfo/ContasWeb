@@ -14,6 +14,10 @@ type
    constructor Create(APrismSession: TPrismSession); override;  //OnNewSession
   end;
 
+  var
+    FIdUser: integer;
+    FUserName: String;
+    FUserProfile: String;
 
 implementation
 

@@ -1,0 +1,8 @@
+D2Bridge Framework
+by Talis Jonatas Gomes
+https://www.d2bridge.com.br
+
+LOG Started in 10/09/2024 16:20:13
+
+10/09/2024 16:20:41 | Identy = main | Component = BUTTON_LOGAR | Event = OnClick | Error = Operation aborted
+10/09/2024 16:20:51 | Identy = main | Component = BUTTON_LOGAR | Event = OnClick | Error = Operation aborted

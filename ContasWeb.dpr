@@ -22,7 +22,9 @@ uses
   uPrincipal in 'src\uPrincipal.pas' {FormPrincipal},
   uRelTipo in 'src\uRelTipo.pas' {RelTipo},
   Unit_FormCrudGrupo in 'src\Unit_FormCrudGrupo.pas' {FormCrudGrupo},
-  Unit_FormCrudBase in 'src\Unit_FormCrudBase.pas' {FormCrudBase};
+  Unit_FormCrudBase in 'src\Unit_FormCrudBase.pas' {FormCrudBase},
+  ULogin in 'src\ULogin.pas' {Form_Login},
+  Udashboard in 'src\Udashboard.pas' {FormDashboard};
 
 {$R *.res}
 
@@ -36,8 +38,11 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar:= False;
   {$IFNDEF D2BRIDGE}
-  Application.CreateForm(TFormPrincipal, FormPrincipal);
-  D2BridgeInstance.AddInstace(FormPrincipal);
+//  Application.CreateForm(TForm_Login, Form_Login);
+  if Form_Login = nil then
+    TForm_Login.CreateInstance;
+  Form_Login.Showmodal;
+//   D2BridgeInstance.AddInstace(Form_Login);
   Application.Run;
   {$ELSE}
   TD2BridgeServerConsole.Run

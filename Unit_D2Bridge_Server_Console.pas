@@ -60,7 +60,7 @@ implementation
 
 uses
   Vcl.Forms, System.Classes, System.Threading,
-  ContasWebWebApp, Unit1, uPrincipal;
+  ContasWebWebApp, Unit1, uPrincipal, ULogin;
 
 
 { Thread Get Port and Name Server }
@@ -226,7 +226,9 @@ begin
  D2BridgeServerController.APPName:= 'ContasWeb';
  //D2BridgeServerController.APPDescription:= 'My D2Bridge Web APP';
 
- D2BridgeServerController.PrimaryFormClass:= TFormPrincipal;
+// D2BridgeServerController.PrimaryFormClass:= TFormPrincipal
+ D2BridgeServerController.PrimaryFormClass:= TForm_Login;
+
 
  //seconds to Send Session to TimeOut and Destroy after Disconnected
  //D2BridgeServerController.Prism.Options.SessionTimeOut:= 300;

@@ -1,0 +1,20 @@
+D2Bridge Framework
+by Talis Jonatas Gomes
+https://www.d2bridge.com.br
+
+LOG Started in 10/09/2024 12:27:13
+
+10/09/2024 12:33:09 | Identy = main | Component = BUTTON_LOGAR | Event = OnClick | Error = Access violation at address 01354A03 in module 'ContasWeb.exe'. Write of address 00000431
+10/09/2024 12:33:11 | Identy = main | Component = BUTTON_LOGAR | Event = OnClick | Error = Access violation at address 01354A03 in module 'ContasWeb.exe'. Write of address 00000431
+10/09/2024 12:33:12 | Identy = main | Component = BUTTON_LOGAR | Event = OnClick | Error = Access violation at address 01354A03 in module 'ContasWeb.exe'. Write of address 00000431
+10/09/2024 12:33:51 | Identy = main | Component = BUTTON_LOGAR | Event = OnClick | Error = Operation aborted
+10/09/2024 12:35:00 | Identy = main | Component = BUTTON_LOGAR | Event = OnClick | Error = Operation aborted
+10/09/2024 12:50:46 | Identy = main | Component = BUTTON_LOGAR | Event = OnClick | Error = Operation aborted
+10/09/2024 12:57:05 | Identy = main | Component = BUTTON_LOGAR | Event = OnClick | Error = Operation aborted
+10/09/2024 12:59:34 | Identy = main | Component = BUTTON_LOGAR | Event = OnClick | Error = Operation aborted
+10/09/2024 13:00:13 | Identy = main | Component = BUTTON_LOGAR | Event = OnClick | Error = Operation aborted
+10/09/2024 13:24:59 | Identy = main | Component = BUTTON_LOGAR | Event = OnClick | Error = Access violation at address 01354A03 in module 'ContasWeb.exe'. Write of address 00000431
+10/09/2024 13:25:02 | Identy = main | Component = BUTTON_LOGAR | Event = OnClick | Error = Access violation at address 01354A03 in module 'ContasWeb.exe'. Write of address 00000431
+10/09/2024 13:25:08 | Identy = main | Component = BUTTON_LOGAR | Event = OnClick | Error = Access violation at address 01354A03 in module 'ContasWeb.exe'. Write of address 00000431
+10/09/2024 13:25:19 | Identy = main | Component = BUTTON_LOGAR | Event = OnClick | Error = Operation aborted
+10/09/2024 13:41:53 | Identy = main | Component = BUTTON_LOGAR | Event = OnClick | Error = Operation aborted

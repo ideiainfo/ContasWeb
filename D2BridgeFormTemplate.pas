@@ -27,17 +27,18 @@ implementation
 
 Uses
  ContasWebWebApp, uConTipo, uPrincipal, uRelTipo,
-  Unit_FormCrudGrupo;
+  Unit_FormCrudGrupo, ContasWeb_Session, Udashboard;
 
 
 { TD2BridgeFormTemplate }
 
 function TD2BridgeFormTemplate.AbrirMenuTipo(EventParams: TStrings): String;
 begin
+
     if FormconTipo =  nil then
       TFormConTipo.CreateInstance;
      FormConTipo.showmodal;
-     FormConTipo.free;
+//     FormConTipo.free;
 end;
 
 procedure TD2BridgeFormTemplate.CallBack(const CallBackName: string;   EventParams: TStrings);
@@ -61,6 +62,13 @@ begin
      if FormCrudGrupo = nil then
         TFormCrudGrupo.CreateInstance;
      FormCrudGrupo.Show;
+  end;
+
+  if SameText(CallBackName, 'AbrirMenuDashboard') then
+  begin
+     if FormDashboard = nil then
+        TFormDashboard.CreateInstance;
+     FormDashboard.Show;
   end;
 
 end;
@@ -103,9 +111,9 @@ procedure TD2BridgeFormTemplate.ProcessTagHTML(const TagString: string;
   var ReplaceTag: string);
 begin
  //Process TAGs HTML {{TAGNAME}}
- if TagString = 'UserName' then
+ if TagString = 'usuario' then
  begin
-  ReplaceTag := 'Name of User';
+  ReplaceTag := ContasWebWebApp.FUserName;
  end;
 
 end;

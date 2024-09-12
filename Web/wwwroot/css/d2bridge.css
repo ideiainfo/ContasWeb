@@ -570,3 +570,137 @@ a.d2bridgesidemenu-link {
         width: 100vw;
     }
 }
+
+
+
+
+
+/* card-center */
+.card-center-sm {
+    max-width: 250px;
+}
+
+.card-center {
+    max-width: 400px;
+}
+
+.card-center-lg {
+    max-width: 400px;
+}
+
+.card-center-xl {
+    max-width: 100%;
+}
+
+[class*="card-center"] {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; 
+    box-sizing: border-box; 
+    border-radius: 10px;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+}
+
+[class*="card-center"] .btn,
+[class*="card-center"] .form-control,        
+[class*="card-center"] .form-select,
+[class*="card-center"] .form-check-input,
+[class*="card-center"] .form-check-label,
+[class*="card-center"] .form-floating>.form-control {
+    height: 52px;
+    padding: .375rem .75rem;
+    box-sizing: border-box;
+}
+
+.card-center .d2bridgecard-body,
+.card-center-lg .d2bridgecard-body,
+.card-center-xl .d2bridgecard-body {
+    padding-top: 1.5em;
+    padding-right: 3em;    
+    padding-left: 3em;
+    padding-bottom: 2.5em;    
+}
+
+.card-center-sm .d2bridgecard-body {
+    padding-top: 1.5em;
+    padding-right: 2em;    
+    padding-left: 2em;
+    padding-bottom: 1.5em;    
+}
+
+[class*="card-center"] .row:not(:last-of-type) {
+    padding-bottom: 10px; 
+}
+
+.card-img-ico {
+    width: auto;
+    height: auto;
+    margin-left: auto; 
+    margin-right: auto;
+    max-width: 100%;
+    padding-top: 3em;    
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
+@media (max-width: 576px) {
+    [class*="card-center"] {
+        width: 90%;         
+    }
+}
+
+
+
+
+/* Image */
+.image-background-fullsize {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; 
+    z-index: -1; 
+}
+
+.image-darken-90 {
+    filter: brightness(0.1); 
+}
+
+.image-darken-80 {
+    filter: brightness(0.2); 
+}
+
+.image-darken-70 {
+    filter: brightness(0.3); 
+}
+
+.image-darken-60 {
+    filter: brightness(0.4); 
+}
+
+.image-darken-50 {
+    filter: brightness(0.5); 
+}
+
+.image-darken-40 {
+    filter: brightness(0.6); 
+}
+
+.image-darken-30 {
+    filter: brightness(0.7); 
+}
+
+.image-darken-20 {
+    filter: brightness(0.8); 
+}
+
+.image-darken-10 {
+    filter: brightness(0.9); 
+}
+
+img.image-background-fullsize[src=""] {
+    visibility: hidden;    
+}
