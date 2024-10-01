@@ -27,7 +27,7 @@ implementation
 
 Uses
  ContasWebWebApp, uConTipo, uPrincipal, uRelTipo,
-  Unit_FormCrudGrupo, ContasWeb_Session, Udashboard;
+  Unit_FormCrudGrupo, ContasWeb_Session, Udashboard, uKanban;
 
 
 { TD2BridgeFormTemplate }
@@ -71,6 +71,12 @@ begin
      FormDashboard.Show;
   end;
 
+    if SameText(CallBackName, 'AbrirMenuKanban') then
+  begin
+     if FormKanban = nil then
+        TFormKanban.CreateInstance;
+     FormKanban.Show;
+  end;
 end;
 
 constructor TD2BridgeFormTemplate.Create(AOwner: TComponent;
@@ -113,7 +119,7 @@ begin
  //Process TAGs HTML {{TAGNAME}}
  if TagString = 'usuario' then
  begin
-  ReplaceTag := ContasWebWebApp.FUserName;
+  ReplaceTag := ContasWeb.FUserName;
  end;
 
 end;

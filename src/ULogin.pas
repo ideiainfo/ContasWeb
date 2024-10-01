@@ -31,9 +31,7 @@ implementation
 
 Uses
  uPrincipal,
-// D2Bridge.Instance,
-// ContasWebWebApp ,
- ContasWeb_Session, ContasWebWebApp;
+ ContasWebWebApp;
 
 {$R *.dfm}
 
@@ -63,10 +61,13 @@ begin
   {$IFDEF D2BRIDGE}
   //User Vars
 
-  ContasWebWebApp.FIdUser:= 1;
-  ContasWebWebApp.FUserName:= Edit_Login.Text;
-  ContasWebWebApp.FUserProfile:= 'User Administrator';
+//  ContasWebWebApp.FIdUser:= 1;
+//  ContasWebWebApp.FUserName:= Edit_Login.Text;
+//  ContasWebWebApp.FUserProfile:= 'User Administrator';
 
+  ContasWeb.FIdUser:= 1;
+  ContasWeb.FUserName:= Edit_Login.Text;
+  ContasWeb.FUserProfile:= 'User Administrator';
 
   //Info User
   //D2Bridge.PrismSession.InfoConnection.User:= ContasWebWebApp.FUserName;
@@ -103,6 +104,10 @@ begin
  inherited;
 
  D2Bridge.FrameworkExportType.TemplateMasterHTMLFile:= 'pages-login.html';
+
+ D2Bridge.HTML.StyleSheets.Add('<link rel="manifest" href="manifest.json">');
+
+ //D2Bridge.HTML.Render.Headers.Add('<link rel="manifest" href="manifest.json">');
 
  D2Bridge.Items.Add.VCLObj(Edit_Login);
  D2Bridge.Items.Add.VCLObj(Edit_Senha);

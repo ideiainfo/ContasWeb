@@ -1,0 +1,60 @@
+<section class="section prismbody">
+
+    <div class="card h-100">
+        <div class="card-header pb-0">
+          <h6>{{Title}}</h6>
+        </div>
+        <div class="card-body p-3">
+            $prismbody
+
+            <video autoplay width="250em" id="videoplay">
+
+            </video>
+            <button onclick="useCamera()">
+                 Ativar Camera
+
+            </button>
+
+            <button onclick="takePhoto()">
+                Fotografar
+
+           </button>
+
+            <image src ="" width="250em" id="imgTakePhoto">
+
+            </image>
+            <a download="foto.png" href="" id="linkdownload">Download</a>
+
+        </div>
+    </div>
+    
+</section>
+
+<script>
+
+    function useCamera () {
+      navigator.mediaDevices.getUserMedia({ video: true })
+        .then(mediaStream => {
+          this.cameraStart = true
+          document.getElementById('videoplay').srcObject = mediaStream
+          this.track = mediaStream.getVideoTracks()[0]
+          this.imageCapture = new ImageCapture(this.track)
+        })
+    };
+
+    function takePhoto () {
+      this.imageCapture.takePhoto()
+        .then(blob => {
+          createImageBitmap(blob)
+          const reader = new FileReader()
+          reader.readAsDataURL(blob)
+          reader.onloadend = () => {
+            document.getElementById('imgTakePhoto').src = reader.result
+            console.log(reader.result)
+            document.getElementById('linkdownload').href=reader.result
+          }
+        })
+        .catch(error => console.log(error))
+    };
+
+</script>

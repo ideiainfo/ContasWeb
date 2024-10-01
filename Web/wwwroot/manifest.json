@@ -1,0 +1,46 @@
+{
+    "id": "/",
+    "dir": "ltr",
+	"theme_color": "#4a90e2",
+    "background_color": "#ffffff",
+    "display": "fullscreen",
+    "scope": "/",
+    "start_url": "/",
+    "name": "contasweb",
+    "short_name": "contasweb",
+    "features": [
+    "Cross Platform",
+    "low-latency inking",
+    "fast",
+    "useful AI"
+  ],
+    "icons": [
+        {
+            "src": "icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+ "categories": [
+    "productivity"
+	  ],
+	  "launch_handler": {
+		"client_mode": "navigate-existing"
+	  },
+	  "edge_side_panel": {}
+	}

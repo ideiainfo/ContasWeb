@@ -221,6 +221,7 @@ class procedure TD2BridgeServerConsole.Run;
 begin
  D2BridgeServerController:= TContasWebWebAppGlobal.Create(TApplication.Create(nil));
  vServerPort:= D2BridgeServerController.Prism.INIConfig.ServerPort(8888);
+ vServerPort:=8082;
  vServerName:= D2BridgeServerController.Prism.INIConfig.ServerName('D2Bridge Server');
 
  D2BridgeServerController.APPName:= 'ContasWeb';

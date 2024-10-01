@@ -38,9 +38,9 @@ type
 var
  D2BridgeServerController: TContasWebWebAppGlobal;
 
- FIdUser: integer;
- FUserName: String;
- FUserProfile: String;
+// FIdUser: integer;
+// FUserName: String;
+// FUserProfile: String;
 
 Function ContasWeb: TContasWebSession;
 

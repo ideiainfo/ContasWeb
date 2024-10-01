@@ -183,6 +183,10 @@
             <Form>FormDashboard</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="src\uKanban.pas">
+            <Form>formKanban</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

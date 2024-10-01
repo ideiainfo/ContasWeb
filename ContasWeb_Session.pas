@@ -11,13 +11,13 @@ type
   private
 
   public
-   constructor Create(APrismSession: TPrismSession); override;  //OnNewSession
-  end;
-
-  var
     FIdUser: integer;
     FUserName: String;
     FUserProfile: String;
+   constructor Create(APrismSession: TPrismSession); override;  //OnNewSession
+  end;
+
+
 
 implementation
 

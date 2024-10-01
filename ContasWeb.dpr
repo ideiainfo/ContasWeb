@@ -24,7 +24,8 @@ uses
   Unit_FormCrudGrupo in 'src\Unit_FormCrudGrupo.pas' {FormCrudGrupo},
   Unit_FormCrudBase in 'src\Unit_FormCrudBase.pas' {FormCrudBase},
   ULogin in 'src\ULogin.pas' {Form_Login},
-  Udashboard in 'src\Udashboard.pas' {FormDashboard};
+  Udashboard in 'src\Udashboard.pas' {FormDashboard},
+  uKanban in 'src\uKanban.pas' {formKanban};
 
 {$R *.res}
 

@@ -1231,3 +1231,15 @@ h6 {
   font-size: 13px;
   color: #012970;
 }
+
+
+.card.draggable {
+    margin-bottom: 1rem;
+    cursor: grab;
+}
+
+.droppable {
+    background-color: var(--success);
+    min-height: 120px;
+    margin-bottom: 1rem;
+}
